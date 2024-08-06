@@ -21,8 +21,8 @@ pub async fn config() -> surrealdb::Result<()> {
     
     // Sign in with the root user
     db.signin(Root {
-        username: "cyberhunter",
-        password: "sriram123",
+        username: &dotenv::var("USERNAME").expect("No User"),
+        password: &dotenv::var("PASSWORD").expect("No User"),
     }).await?;
     
     // Define namespace and database
