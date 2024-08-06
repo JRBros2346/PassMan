@@ -1,6 +1,7 @@
 use std::process::{Child, Command, Stdio};
 
 mod db;
+mod security;
 
 struct Server(Child);
 impl Drop for Server {

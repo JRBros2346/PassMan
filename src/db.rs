@@ -49,5 +49,6 @@ pub async fn config() -> surrealdb::Result<()> {
     
     println!("Record created successfully");
     
+    
     Ok(())
 }
