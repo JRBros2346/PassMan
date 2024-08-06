@@ -1675,7 +1675,9 @@ dependencies = [
 name = "pass-man"
 version = "0.1.0"
 dependencies = [
+ "serde",
  "surrealdb",
+ "tokio",
 ]
 
 [[package]]
