@@ -39,7 +39,7 @@ pub async fn config() -> surrealdb::Result<()> {
     db.query("DEFINE FIELD website ON pass_table TYPE string").await?;
     
     // Create a record in the table
-    let _created: Vec<Record> = db.create("pass_table")
+    let _created: Vec<PassTable> = db.create("pass_table")
         .content(PassTable {
             user_sj: "Demo".to_string(),
             pass_sj: "Demo".to_string(),
