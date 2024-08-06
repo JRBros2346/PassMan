@@ -17,12 +17,12 @@ struct Record {
 
 pub async fn config() -> surrealdb::Result<()> {
     // Connect to the SurrealDB server
-    let db = Surreal::new::<Ws>("127.0.0.1:8000").await?;
+    let db = Surreal::new::<Ws>("0.0.0.0:8000").await?;
     
     // Sign in with the root user
     db.signin(Root {
-        username: &dotenv::var("USERNAME").expect("No User"),
-        password: &dotenv::var("PASSWORD").expect("No User"),
+        username: &dotenv::var("SURREAL_USER").expect("No User"),
+        password: &dotenv::var("SURREAL_PASS").expect("No User"),
     }).await?;
     
     // Define namespace and database

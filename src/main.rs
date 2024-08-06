@@ -13,7 +13,7 @@ impl Drop for Server {
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     dotenv::dotenv()?;
     let _server = Server(Command::new("surreal")
-        .args(["start", "-u", &dotenv::var("USERNAME")?, "-p", &dotenv::var("PASSWORD")?])
+        .args(["start"])
         .stdout(Stdio::null())
         .stderr(Stdio::null())
         .stdin(Stdio::null())
