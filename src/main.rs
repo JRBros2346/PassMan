@@ -2,6 +2,7 @@ use std::process::{Child, Command, Stdio};
 
 mod db;
 mod pass_gen;
+mod security;
 
 struct Server(Child);
 impl Drop for Server {
